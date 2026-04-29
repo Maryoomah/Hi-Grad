@@ -18,6 +18,9 @@ export default function Nav() {
           <li>
             <NavLink to="/courses"> Courses</NavLink>
           </li>
+           <li>
+            <NavLink to="/tefl">TEFL</NavLink>
+          </li>
           <NavLink to="/faqs"> FAQs</NavLink>
           <li>
             <NavLink to="/contact"> Contact</NavLink>

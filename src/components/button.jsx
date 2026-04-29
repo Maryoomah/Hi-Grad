@@ -10,7 +10,7 @@ export default function Button({
 
   const variants = {
     primary: "bg-lime-500 text-slate-800 font-bold",
-    secondary: "bg-slate-800 text-yellow-500 font-bold",
+    secondary: "bg-slate-500 text-yellow-500 font-bold",
   };
 
   const className = `${baseStyle} ${variants[variant]}`;

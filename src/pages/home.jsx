@@ -11,6 +11,8 @@ export default function Home() {
       >
         {/* content wrapper */}
         <div className="max-w-2xl mx-auto">
+          {/* Announcement */}
+          
           {/* Main Heading */}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
             Where Excellence Meets Opportunity
@@ -29,6 +31,9 @@ export default function Home() {
             <span className="mx-2">|</span>
             For All Ages
           </div>
+          <p className="text-xs mt-4 sm:text-sm text-yellow-400 font-medium mb-3">
+            TEFL Programme Now Open • Starts July 2026
+          </p>
           {/* CTA */}
           <div className="mt-6 flex justify-center">
             <Button variant="primary">Get Started</Button>
@@ -38,10 +43,18 @@ export default function Home() {
       {/* stat */}
       <StatsSection />
       {/* About */}
-      <Section className="bg-slate-800 text-lime-500 ">
-        <div className="flex items-center justify-center gap-12">
+      <Section className="bg-slate-800 text-lime-500 " data-aos="fade-right">
+        <div className="md:flex items-center justify-center gap-12">
           {/* left content */}
-          <div className="max-w-xl text-left ">
+          <div
+            className="max-w-xl 
+  bg-slate-900 
+  sm:bg-transparent
+  sm:border sm:border-slate-800 
+  rounded-2xl 
+  p-6 
+  shadow-lg shadow-black/20"
+          >
             <h1>About Hi-Grad</h1>
             <p className="mt-4  text-justify">
               <span className="text-white/75 italic">
@@ -60,7 +73,7 @@ export default function Home() {
               the Master TEFL Programme for aspiring educators. Expert-led.
               Internationally aligned. Personally delivered.
             </p>
-            <div className=" mt-6">
+            <div className=" mt-6 space-y-4 sm:space-x-4">
               <Button variant="primary" href="/">
                 Explore Programmes
               </Button>
@@ -70,7 +83,7 @@ export default function Home() {
           {/* right */}
           <div>
             <img
-              src="/images/logo.jpeg" 
+              src="/images/logo.jpeg"
               alt="hi-grad logo"
               className="w-80 rounded-xl"
             />
@@ -138,6 +151,7 @@ export default function Home() {
             transition-all duration-300 
             hover:-translate-y-1
           "
+              data-aos="fade-up"
             >
               <h3 className="text-lg font-semibold text-lime-400">
                 {program.title}
@@ -156,7 +170,10 @@ export default function Home() {
         </div>
 
         {/* Featured Programme */}
-        <div className="mt-20 bg-slate-900 border border-slate-800 rounded-2xl p-8 grid grid-cols-1 lg:grid-cols-2 gap-10 shadow-xl shadow-black/30">
+        <div
+          data-aos="fade-up"
+          className="mt-20 bg-slate-900 border border-slate-800 rounded-2xl p-8 grid grid-cols-1 lg:grid-cols-2 gap-10 shadow-xl shadow-black/30"
+        >
           {/* Left */}
           <div>
             <p className="mb-5 inline-block text-sm text-lime-400 font-medium bg-lime-400/10 px-3 py-1 rounded-full">
@@ -172,17 +189,11 @@ export default function Home() {
               programme designed and delivered by a Cambridge-qualified,
               CELTA-certified, MA-qualified educator.
             </p>
-
-            <div className="mt-6">
-              <Button variant="primary" href="/courses">
-                View Full Details
-              </Button>
-            </div>
           </div>
 
           {/* Right (Key Info - Pills) */}
           <div className="bg-slate-800 border border-slate-700 rounded-xl p-6">
-            <div className="flex flex-wrap gap-3">
+            <div className="md:grid grid-cols-2 gap-4 space-y-3">
               {[
                 ["Duration", "13 weeks"],
                 ["Start", "July 2026"],
@@ -210,7 +221,16 @@ export default function Home() {
               ))}
             </div>
           </div>
+          <div className="mt-6">
+            <Button variant="primary" href="/tefl">
+              View Full Details
+            </Button>
+          </div>
         </div>
+      </Section>
+      {/* why */}
+      <Section>
+
       </Section>
     </main>
   );
