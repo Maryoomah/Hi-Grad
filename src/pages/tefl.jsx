@@ -1,5 +1,5 @@
 import Section from "../components/section";
-import TEFLSchedule from "../components/teflTimeline";
+import TEFLSchedule from "./teflTimeline";
 export default function TEFL() {
   return (
     <main>
