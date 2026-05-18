@@ -1,16 +1,65 @@
-# React + Vite
+# HiGrad Academy Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive educational website built for HiGrad Academy using React and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project was designed to create a clean and professional online presence for an educational brand. The website focuses on clarity, accessibility, responsive design, and modern UI aesthetics.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Responsive design across devices
+- Modern landing page layout
+- Animated and interactive UI sections
+- Course and program showcase
+- Smooth scrolling navigation
+- Clean reusable component structure
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Tailwind CSS
+- Vite
+
+## Live Demo
+
+https://hi-grad.vercel.app/
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Maryoomah/Hi-Grad.git
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start development server:
+
+```bash
+npm run dev
+```
+
+## Project Structure
+
+```txt
+src/
+ ├── components/
+ ├── assets/
+ ├── data/
+ ├── pages/
+ └── App.jsx
+```
+
+## Goals
+
+The goal of this project was to build a visually engaging educational website that balances branding, usability, and responsive frontend development.
+
+## Author
+
+Maryam Abdulkareem
