@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
-import Section from "../components/Section";
-import Header from "../components/Header";
+import Section from "../components/section";
+import Header from "../components/header";
 import Button from "../components/button";
 import { hubResources } from "../data/learningHubData";
 export default function ResourceCategory() {
