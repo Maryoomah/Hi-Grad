@@ -1,25 +1,53 @@
+import { Link } from "react-router-dom";
+
 export default function Button({
   children,
   variant = "primary",
   onClick,
   type = "button",
   href,
+  to,
 }) {
   const baseStyle =
-    "px-6 py-3 text-lg rounded-lg cursor-pointer transition-all inline-block";
+    "px-6 py-3 text-sm sm:text-base rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center";
 
   const variants = {
-    primary: "bg-lime-500 text-slate-800 font-bold",
-    secondary: "bg-slate-500 text-yellow-500 font-bold",
-  };
+    primary:
+      "bg-higrad-green text-higrad-textDark hover:bg-higrad-greenDark",
+
+    secondary:
+      "border border-higrad-navy text-higrad-navy hover:bg-higrad-navy hover:text-white",
+  
+  secondaryDark:
+    "border border-white text-white hover:bg-white hover:text-higrad-navy",
+
+    };
 
   const className = `${baseStyle} ${variants[variant]}`;
 
-  if (href) {
+ if (href) {
+  const isExternal =
+    href.startsWith("http") ||
+    href.startsWith("mailto:") ||
+    href.startsWith("tel:");
+
+  return (
+    <a
+      href={href}
+      className={className}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+    >
+      {children}
+    </a>
+  );
+}
+
+  if (to) {
     return (
-      <a href={href} className={className}>
+      <Link to={to} className={className}>
         {children}
-      </a>
+      </Link>
     );
   }
 
@@ -27,5 +55,6 @@ export default function Button({
     <button type={type} onClick={onClick} className={className}>
       {children}
     </button>
+    
   );
 }

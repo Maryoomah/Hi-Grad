@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import Header from "./header";
+import Section from "./section";
 
 function Counter({ end, duration = 2000, suffix = "" }) {
   const [count, setCount] = useState(0);
@@ -21,19 +23,16 @@ function Counter({ end, duration = 2000, suffix = "" }) {
 
             setCount(value);
 
-            if (progress < 1) {
-              requestAnimationFrame(animate);
-            }
+            if (progress < 1) requestAnimationFrame(animate);
           };
 
           requestAnimationFrame(animate);
         }
       },
-      { threshold: 0.4 }
+      { threshold: 0.4 },
     );
 
     if (ref.current) observer.observe(ref.current);
-
     return () => observer.disconnect();
   }, [end, duration]);
 
@@ -49,45 +48,54 @@ export default function StatsSection() {
   const stats = [
     { value: 100, suffix: "+", label: "Students Trained" },
     { value: 20, suffix: "+", label: "Years Experience" },
-    { value: 90, suffix: "%", label: "IELTS Success Rate" },
+    { value: 80, suffix: "%", label: "IELTS Success Rate" },
     { value: 20, suffix: "+", label: "Teachers Trained" },
   ];
 
   return (
-    <section className="relative py-16 bg-linear-to-br from-lime-500 to-green-600 text-white overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,white,transparent)]" />
+  <Section className="relative bg-higrad-paleGreen text-higrad-navy overflow-hidden py-24">
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+    
+    {/* heading */}
+    <div className="text-center max-w-3xl mx-auto">
+      <Header>Our Impact in Numbers</Header>
 
-      <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
-        {/* Heading */}
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
-          Our Impact
-        </h2>
+      <p className="mt-5 text-slate-600 text-base sm:text-lg leading-relaxed">
+        Real outcomes from structured teaching, expert guidance, and
+        consistent learner support.
+      </p>
+    </div>
 
-      
+    {/* grid */}
+    <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      {stats.map((stat, index) => (
+        <div
+          key={index}
+          className="group relative bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+        >
+          {/* top accent */}
+          <div className="absolute top-0 left-0 h-[3px] w-full bg-higrad-gold opacity-80 rounded-t-3xl" />
 
-        {/* Grid */}
-        <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl p-6 shadow-lg hover:scale-105 transition duration-300"
-            >
-              <p className="text-3xl sm:text-4xl font-extrabold">
-                <Counter
-                  end={stat.value}
-                  suffix={stat.suffix}
-                  duration={2000}
-                />
-              </p>
+          {/* label */}
+          <p className="text-xs uppercase tracking-[0.18em] text-slate-500">
+            {stat.label}
+          </p>
 
-              <p className="mt-2 text-sm sm:text-base text-white/80">
-                {stat.label}
-              </p>
-            </div>
-          ))}
+          {/* number */}
+          <p className="mt-5 text-4xl lg:text-5xl font-extrabold text-higrad-navy group-hover:text-higrad-green transition-colors duration-300">
+            <Counter
+              end={stat.value}
+              suffix={stat.suffix}
+              duration={2000}
+            />
+          </p>
+
+          {/* bottom line */}
+          <div className="mt-6 h-px bg-slate-100" />
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
+  </div>
+</Section>
   );
 }

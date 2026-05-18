@@ -1,7 +1,24 @@
-export default function Section({ children, className = "", ...props }) {
+export default function Section({
+  id,
+  children,
+  className = "",
+  containerClassName = "",
+  ...props
+}) {
   return (
-    <section className={`py-16 sm:py-20  ${className}`} {...props}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-16 ">{children}</div>
+    <section id={id} className={`py-20 lg:py-24 ${className}`} {...props}>
+      <div
+        className={`
+          max-w-7xl
+          mx-auto
+          px-4
+          sm:px-6
+          lg:px-8
+          ${containerClassName}
+        `}
+      >
+        {children}
+      </div>
     </section>
   );
 }
